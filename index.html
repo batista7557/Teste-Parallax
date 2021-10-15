@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parallax Scrolling With Javascript</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <section class="zoom">
+        <img src="img\mountain1.png" id="layer1">
+        <img src="img\mountain2.png" id="layer2">
+        <img src="img\text.png" id="text">
+    </section>
+    <section class="content">
+        <h2>Simple background with Parallax using Javascript</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum odio quidem, minus labore porro iusto commodi facilis neque animi quam distinctio aperiam quibusdam recusandae quos excepturi quis ut esse exercitationem temporibus corporis ullam et. Nihil voluptate, iusto earum reprehenderit voluptates voluptatibus cupiditate distinctio ducimus. Expedita eius voluptatum non in nemo.</p>
+    </section>
+    <script type="text/javascript">
+        var layer1 = document.getElementById('layer1')
+        scroll = window.pageYOffset
+        document.addEventListener('scroll', function (e) {
+            var offset = window.pageYOffset
+            scroll = offset
+            layer1.style.width = (100 + scroll/5) + '%'
+        })
+
+        var layer2 = document.getElementById('layer2')
+        scroll = window.pageYOffset
+        document.addEventListener('scroll', function (e) {
+            var offset = window.pageYOffset
+            scroll = offset
+            layer2.style.width = (100 + scroll/5) + '%'
+            layer2.style.left = scroll/50 + '%'
+        })
+
+        var text = document.getElementById('text')
+        scroll = window.pageYOffset
+        document.addEventListener('scroll', function (e) {
+            var offset = window.pageYOffset
+            scroll = offset
+            layer2.style.width = (100 + scroll/5) + '%'
+            text.style.top = - scroll/20 + '%'
+        })
+    </script>
+</body>
+</html>
